@@ -22,7 +22,7 @@
 #-keep class org.apache.** {*;}
 #-keep interface org.apache.** {*;}
 #-dontwarn org.apache.**
-#-dontwarn org.slf4j.**
+-dontwarn org.slf4j.**
 
 -keeppackagenames doNotKeepAThing
 -renamesourcefileattribute SourceFile

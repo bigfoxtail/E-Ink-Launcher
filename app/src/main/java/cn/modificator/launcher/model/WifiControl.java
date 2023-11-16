@@ -106,7 +106,7 @@ public class WifiControl {
   }
 
   private void updateStatus(){
-    if (appName!=null) {
+    if (appName!=null && showNameRes != 0) {
       appName.setText(mContext.getString(showNameRes, connectWifiName));
       String fileName = showIconRes == R.drawable.wifi_on ? wifiOnResName : wifiOffResName;
       int index = iconReplacePkg.indexOf(fileName);
