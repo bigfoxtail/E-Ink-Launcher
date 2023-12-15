@@ -82,10 +82,10 @@
             android:id="@+id/toSetting"
             android:layout_width="60dp"
             android:layout_height="match_parent"
-            android:background="?android:selectableItemBackground"
+            android:background="?attr/selectableItemBackground"
             android:clickable="true"
             android:padding="10dp"
-            android:src="@drawable/navibar_icon_settings_highlight" />
+            app:srcCompat="@drawable/navibar_icon_settings_highlight" />
 
         <Space
             android:layout_width="wrap_content"

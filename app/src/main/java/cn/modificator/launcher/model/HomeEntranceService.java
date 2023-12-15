@@ -18,27 +18,28 @@ public class HomeEntranceService extends Service {
     public static final String HomeEntranceChannelId = "Back to Launcher";
     public static final String HomeEntranceChannelName = "Back to Launcher Notification";
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onCreate() {
         super.onCreate();
-        if (Build.VERSION.SDK_INT>=26){
+        if (Build.VERSION.SDK_INT >= 26) {
             NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             if (nm != null) {
-                nm.createNotificationChannel(new NotificationChannel(HomeEntranceChannelId,HomeEntranceChannelName,NotificationManager.IMPORTANCE_LOW));
+                nm.createNotificationChannel(new NotificationChannel(HomeEntranceChannelId, HomeEntranceChannelName, NotificationManager.IMPORTANCE_LOW));
             }
         }
 
         Notification.Builder builder;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            builder = new Notification.Builder(this,HomeEntranceChannelId);
-        }else{
+            builder = new Notification.Builder(this, HomeEntranceChannelId);
+        } else {
             builder = new Notification.Builder(this);
         }
 
         startForeground(1, builder
                 .setWhen(System.currentTimeMillis())
                 .setContentTitle(getString(R.string.notification_click_back_launcher))
-                .setContentIntent(PendingIntent.getActivity(this,10,new Intent(this, Launcher.class),Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED))
+                .setContentIntent(PendingIntent.getActivity(this, 10, new Intent(this, Launcher.class), Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED))
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .getNotification()
         );
@@ -56,10 +57,10 @@ public class HomeEntranceService extends Service {
 
     @Override
     public void onDestroy() {
-        Intent thisService = new Intent(this,HomeEntranceService.class);
+        Intent thisService = new Intent(this, HomeEntranceService.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(thisService);
-        }else{
+        } else {
             startService(thisService);
         }
         super.onDestroy();

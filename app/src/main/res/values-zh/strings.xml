@@ -32,7 +32,6 @@
     <string name="battery_charging">充电中</string>
     <string name="battery_low">电量低</string>
     <string name="battery_full">充满了</string>
-    <string name="battery_wtf" translatable="false">WTF?</string>
 
     <string name="dialog_cancel">取消</string>
     <string name="dialog_hide">隐藏</string>
@@ -66,7 +65,6 @@
     <string name="exit">退出</string>
     <string name="delete">删除</string>
     <string name="app_manager_finish">完成</string>
-    <string name="power_title" translatable="false">现在可以操作电源了哦~</string>
     <string name="battery_status_low_battery">电量低</string>
     <string name="show_custom_icon">显示自定义图标</string>
     <string name="show_statusbar">显示状态栏</string>

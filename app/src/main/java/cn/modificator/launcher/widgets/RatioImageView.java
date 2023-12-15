@@ -4,14 +4,15 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.ImageView;
+
+import androidx.appcompat.widget.AppCompatImageView;
 
 import cn.modificator.launcher.R;
 
 /**
  * Created by mod on 15-10-30.
  */
-public class RatioImageView extends ImageView {
+public class RatioImageView extends AppCompatImageView {
 
   /**
    * 以哪边为参考，默认为宽

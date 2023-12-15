@@ -1,7 +1,9 @@
 package cn.modificator.launcher.widgets;
 
+import static android.view.View.MeasureSpec.EXACTLY;
+import static android.view.View.MeasureSpec.makeMeasureSpec;
+
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -25,11 +27,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Observer;
 import java.util.Set;
 
 import cn.modificator.launcher.Config;
@@ -38,9 +41,6 @@ import cn.modificator.launcher.R;
 import cn.modificator.launcher.model.AppDataCenter;
 import cn.modificator.launcher.model.ObservableFloat;
 import cn.modificator.launcher.model.WifiControl;
-
-import static android.view.View.MeasureSpec.EXACTLY;
-import static android.view.View.MeasureSpec.makeMeasureSpec;
 
 /**
  * Created by mod on 16-4-23.
@@ -153,13 +153,13 @@ public class EInkLauncherView extends ViewGroup{
       }
     }
   }
-
+  @SuppressWarnings("deprecation")
   private void resetIconLayout(){
     observable.deleteObservers();
     removeAllViews();
     for (int i = 0; i < ROW_NUM * COL_NUM; i++) {
       View itemView = LayoutInflater.from(getContext()).inflate(R.layout.launcher_item, this, false);
-      observable.addObserver((Observer) itemView.findViewById(R.id.appName));
+      observable.addObserver((java.util.Observer) itemView.findViewById(R.id.appName));
       TextView tvAppName = ((TextView)itemView.findViewById(R.id.appName));
       tvAppName.setTextSize(TypedValue.COMPLEX_UNIT_SP, Config.fontSize);
       tvAppName.setMinLines(Config.appNameLines==2?Config.appNameLines:0);

@@ -1,22 +1,17 @@
 package cn.modificator.launcher;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.DrawableCompat;
 
-import java.io.File;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Collections;
-import java.util.List;
 
 
 /**
@@ -92,7 +87,7 @@ public class Utils {
       "凌晨", "黎明", "早晨", "上午", "中午", "下午", "晚上", "深夜"
   };
 
-  public static void checkStroagePermission(Activity activity,Runnable next){
+  public static void checkStroagePermission(AppCompatActivity activity, Runnable next){
     String[] permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE};
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && activity.checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED) {
       activity.requestPermissions(permissions,10003);

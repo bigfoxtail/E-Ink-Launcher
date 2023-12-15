@@ -4,7 +4,6 @@
     <string name="file_manager">Menedżer plików</string>
 
     <string name="empty_directory_hint">Pusty folder</string>
-    <string name="start_path_name" translatable="false">Urządzenie</string>
     <string name="type_archive">Archiwum</string>
     <string name="type_certificate">Certyfikat</string>
     <string name="type_directory">Folder</string>
@@ -36,7 +35,6 @@
     <string name="battery_charging">Ładowanie</string>
     <string name="battery_low">Niski poziom</string>
     <string name="battery_full">Pełna</string>
-    <string name="battery_wtf" translatable="false">WTF?</string>
 
     <string name="dialog_cancel">Anuluj</string>
     <string name="dialog_hide">Ukryj</string>

@@ -1,15 +1,12 @@
 package cn.modificator.launcher.widgets;
 
 import android.content.Context;
-
-import androidx.annotation.Nullable;
-
 import android.util.AttributeSet;
 import android.util.TypedValue;
-import android.widget.TextView;
 
-import java.util.Observable;
-import java.util.Observer;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
+
 
 /**
  * Created by Modificator
@@ -17,22 +14,24 @@ import java.util.Observer;
  * des:create file and achieve model
  */
 
-public class ObserverFontTextView extends TextView implements Observer {
-  public ObserverFontTextView(Context context) {
-    super(context);
-  }
+@SuppressWarnings("deprecation")
+public class ObserverFontTextView extends AppCompatTextView implements java.util.Observer {
+    public ObserverFontTextView(Context context) {
+        super(context);
+    }
 
-  public ObserverFontTextView(Context context, @Nullable AttributeSet attrs) {
-    super(context, attrs);
-  }
+    public ObserverFontTextView(Context context, @Nullable AttributeSet attrs) {
+        super(context, attrs);
+    }
 
-  public ObserverFontTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
-  }
+    public ObserverFontTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+    }
 
-  @Override
-  public void update(Observable o, Object arg) {
-    setTextSize(TypedValue.COMPLEX_UNIT_SP, (Float) arg);
+    @SuppressWarnings("deprecation")
+    @Override
+    public void update(java.util.Observable o, Object arg) {
+        setTextSize(TypedValue.COMPLEX_UNIT_SP, (Float) arg);
 //    requestLayout();
-  }
+    }
 }

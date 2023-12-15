@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rootView"
     android:layout_width="match_parent"
@@ -227,7 +228,7 @@
         android:background="#ffffff"
         android:clickable="true"
         android:padding="5dp"
-        android:src="@drawable/close_unclick" />
+        app:srcCompat="@drawable/close_unclick" />
 
     <RelativeLayout
         android:id="@+id/font_control_p"
@@ -272,7 +273,7 @@
             android:background="@drawable/border"
             android:clickable="true"
             android:padding="5dp"
-            android:src="@drawable/close_unclick" />
+            app:srcCompat="@drawable/close_unclick" />
     </RelativeLayout>
 
     <ScrollView
@@ -292,7 +293,7 @@
                 android:id="@+id/toBack1"
                 android:layout_width="wrap_content"
                 android:layout_height="55dp"
-                android:background="?android:selectableItemBackground"
+                android:background="?attr/selectableItemBackground"
                 android:paddingRight="30dp"
                 android:visibility="gone">
 
@@ -300,7 +301,7 @@
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:scaleType="centerInside"
-                    android:src="@drawable/guide_last" />
+                    app:srcCompat="@drawable/guide_last" />
 
                 <TextView
                     android:layout_width="wrap_content"
